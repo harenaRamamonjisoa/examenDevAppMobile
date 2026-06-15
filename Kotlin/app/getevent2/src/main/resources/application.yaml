@@ -1,0 +1,16 @@
+ktor:
+  deployment:
+    port: 8080
+  application:
+    modules:
+      - com.tco.SerializationKt.configureSerialization
+      - com.tco.plugins.SecurityKt.configureSecurity
+      - com.tco.DIKt.configureDependencyInjection
+      - com.tco.ExposedKt.configureExposed
+      - com.tco.ResourcesKt.configureResources
+      - com.tco.RoutingKt.configureRouting
+
+storage:
+  url: "r2dbc:postgresql://localhost:5432/ktor"
+  user: "nante"
+  password: "thekiller"
